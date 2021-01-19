@@ -1,4 +1,4 @@
-const baseUrl = 'http://localhost:7071';
+const baseUrl = 'https://incidences-api.azurewebsites.net';
 const endpoint = '/api/incidents'
 const url = baseUrl + endpoint;
 
@@ -19,7 +19,7 @@ export const createIncidence = async (data) => {
         headers: {
           'Content-Type': 'application/json'
         },
-        body: JSON.stringify(data) // body data type must match "Content-Type" header
+        body: JSON.stringify(data)
     }
     const response = await fetch(url, requestInit);
     return await response.json();
@@ -33,7 +33,7 @@ export const updateIncident = async (data) => {
         headers: {
           'Content-Type': 'application/json'
         },
-        body: JSON.stringify(data) // body data type must match "Content-Type" header
+        body: JSON.stringify(data)
     }
     const response = await fetch(updateUrl, requestInit);
     return await response.json();
