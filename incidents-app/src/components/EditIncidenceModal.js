@@ -12,17 +12,17 @@ const EditIncidenceModal = ({incidence, incidenceEdited}) => {
 
     const { register, handleSubmit } = useForm();
 
-    const onSubmit = data => {
-        const { id, WorkerId, CreatedDateTime } = incidence;
+    const onSubmit = (data) => {
+        const { id, IncidentId, CreatedDateTime } = incidence;
         const updatedIncident = {
             ...data,
             CreatedDateTime: CreatedDateTime,
-            WorkerId: WorkerId, 
+            IncidentId: IncidentId, 
             id: id
         };
 
-        updateIncident(updatedIncident)
-        .then(response => {
+        updateIncident(updatedIncident).then(response => {
+            console.log(response);
             const data = {
                 isEdited: response,
                 editedIncident: updatedIncident

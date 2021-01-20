@@ -8,7 +8,7 @@ const Incidences = ({ incidences, incidenceEdited, deleteIncident }) => {
 
         return (
             <tr key={index} className={index % 2 === 0 ? 'odd' : 'even'}>
-                <td>{incidence.WorkerId}</td>
+                <td>{incidence.IncidentId}</td>
                 <td>{incidence.Priority}</td>
                 <td>{incidence.CreatedBy}</td>
                 <td>{incidence.FirstAssignementGroup}</td>
