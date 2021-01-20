@@ -1,0 +1,38 @@
+{
+  "bindings": [
+    {
+      "authLevel": "anonymous",
+      "type": "httpTrigger",
+      "direction": "in",
+      "name": "req",
+      "methods": [
+        "put"
+      ],
+      "route": "incidents/{id}"
+    },
+    {
+      "type": "http",
+      "direction": "out",
+      "name": "res"
+    },
+    {
+      "type": "cosmosDB",
+      "direction": "in",
+      "name": "inputDocument",
+      "databaseName": "Incidents",
+      "collectionName": "Incidences",
+      "connectionStringSetting": "CosmosDBConnectionString",
+      "sqlQuery": "select * from c where c.id = {id}"
+    },
+    {
+      "type": "cosmosDB",
+      "direction": "out",
+      "name": "outputDocument",
+      "databaseName": "Incidents",
+      "collectionName": "Incidences",
+      "createIfNotExists": "false",
+      "connectionStringSetting": "CosmosDBConnectionString",
+      "partitionKey": "WorkerId"
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "bindings": [
+    {
+      "authLevel": "anonymous",
+      "type": "httpTrigger",
+      "direction": "in",
+      "name": "req",
+      "methods": [
+        "post"
+      ],
+      "route": "incidents"
+    },
+    {
+      "type": "http",
+      "direction": "out",
+      "name": "res"
+    },
+    {
+      "type": "cosmosDB",
+      "direction": "out",
+      "name": "outputDocument",
+      "databaseName": "Incidents",
+      "collectionName": "Incidences",
+      "createIfNotExists": "false",
+      "connectionStringSetting": "CosmosDBConnectionString",
+      "partitionKey": "WorkerId"
+    }
+  ]
+}
