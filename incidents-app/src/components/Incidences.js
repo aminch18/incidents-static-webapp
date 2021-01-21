@@ -8,7 +8,7 @@ const Incidences = ({ incidences, incidenceEdited, deleteIncident }) => {
 
         return (
             <tr key={index} className={index % 2 === 0 ? 'odd' : 'even'}>
-                <td>{incidence.WorkerId}</td>
+                <td>{incidence.IncidentId}</td>
                 <td>{incidence.Priority}</td>
                 <td>{incidence.CreatedBy}</td>
                 <td>{incidence.FirstAssignementGroup}</td>
@@ -27,7 +27,7 @@ const Incidences = ({ incidences, incidenceEdited, deleteIncident }) => {
                         <EditIncidenceModal incidence={incidence} incidenceEdited={incidenceEdited} />
                     </div>
                     <div className="col-md-6">
-                        <button type="button" onClick={(e) => deleteIncident(incidence.id, incidence.WorkerId)} className="btn btn-danger right">Delete</button>
+                        <button type="button" onClick={(e) => deleteIncident(incidence.id, incidence.IncidentId)} className="btn btn-danger right">Delete</button>
                     </div>
                 </td>
             </tr>

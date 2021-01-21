@@ -55,7 +55,9 @@ namespace Incidents_Api.DataAccess
 
         public async Task<object> UpsertIncidentAsync(Incident incident)
         {
-            incident.CreatedDateTime = DateTime.UtcNow;
+            if(string.IsNullOrEmpty(incident.CreatedDateTime.ToString()))
+                incident.CreatedDateTime = DateTime.UtcNow;
+            
             var itemResponse = await _container.UpsertItemAsync(incident, new PartitionKey(incident.IncidentId));
 
             var isSuccessAction =  itemResponse.StatusCode == System.Net.HttpStatusCode.OK
