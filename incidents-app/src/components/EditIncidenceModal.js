@@ -22,9 +22,8 @@ const EditIncidenceModal = ({incidence, incidenceEdited}) => {
         };
 
         updateIncident(updatedIncident).then(response => {
-            console.log(response);
             const data = {
-                isEdited: response,
+                isEdited: response.IsEdited,
                 editedIncident: updatedIncident
             };
             incidenceEdited(data);
@@ -50,8 +49,15 @@ const EditIncidenceModal = ({incidence, incidenceEdited}) => {
                             <input type="text" className="form-control" name="AssignedTo" id="AssignedTo" aria-describedby="emailHelp" ref={register} placeholder="Name of worker" />
                         </div>
                         <div className="form-group col-md-6">
-                            <label >Country</label>
-                            <input type="text" className="form-control" name="Country" id="Country" aria-describedby="emailHelp" ref={register} placeholder="Country code" />
+                        <label htmlFor="exampleInputEmail1">Country</label>
+                            <select className="form-control" name="Country" ref={register} id="sel1">
+                                <option>DE</option>
+                                <option>DK</option>
+                                <option>ES</option>
+                                <option>FR</option>
+                                <option>GB</option>
+                                <option>SK</option>
+                            </select>
                         </div>
                         <div className="form-group col-md-6">
                             <label>Group to Assign</label>

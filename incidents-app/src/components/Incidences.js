@@ -27,7 +27,7 @@ const Incidences = ({ incidences, incidenceEdited, deleteIncident }) => {
                         <EditIncidenceModal incidence={incidence} incidenceEdited={incidenceEdited} />
                     </div>
                     <div className="col-md-6">
-                        <button type="button" onClick={(e) => deleteIncident(incidence.id, incidence.WorkerId)} className="btn btn-danger right">Delete</button>
+                        <button type="button" onClick={(e) => deleteIncident(incidence.id, incidence.IncidentId)} className="btn btn-danger right">Delete</button>
                     </div>
                 </td>
             </tr>

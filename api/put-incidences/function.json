@@ -8,7 +8,7 @@
       "methods": [
         "put"
       ],
-      "route": "incidents/{id}"
+      "route": "incidents/{id}/{partitionKey}"
     },
     {
       "type": "http",
@@ -22,7 +22,7 @@
       "databaseName": "Incidents",
       "collectionName": "Incidences",
       "connectionStringSetting": "CosmosDBConnectionString",
-      "sqlQuery": "select * from c where c.id = {id}"
+      "sqlQuery": "select * from c where c.id = {id} and c.IncidentId = {partitionKey}"
     },
     {
       "type": "cosmosDB",

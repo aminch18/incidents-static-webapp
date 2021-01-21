@@ -24,7 +24,7 @@ const CreateIncidence = (props) => {
                     <div className="row">
                         <div className="form-group col-md-6">
                             <label htmlFor="exampleInputEmail1">Incident Number</label>
-                            <input type="text" className="form-control" name="IncidentId" id="IncidentId" aria-describedby="emailHelp" ref={register} placeholder="Incident Number" />
+                            <input type="text" className="form-control" name="IncidentId" id="IncidentId" aria-describedby="emailHelp" required ref={register} placeholder="Incident Number" />
                         </div>
                         <div className="form-group col-md-6">
                             <label htmlFor="exampleInputEmail1">Assignee</label>
